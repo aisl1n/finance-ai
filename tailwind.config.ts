@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss';
+import type { Config } from "tailwindcss";
 
 const config: Config = {
   darkMode: ["class"],
@@ -10,6 +10,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        danger: "#F6352E",
+        "red-muted": "#E93030",
+        "green-muted": "#55B02E",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
