@@ -20,6 +20,7 @@ const SummaryCard = ({
     ? "text-muted-foreground"
     : "text-white opacity-70";
   const contentClass = isSmall ? "text-2xl" : "text-4xl";
+  const cardClass = isLarge ? "bg-white bg-opacity-5" : "";
 
   const formattedAmount = Intl.NumberFormat("pt-BR", {
     style: "currency",
@@ -27,10 +28,10 @@ const SummaryCard = ({
   }).format(amount);
 
   return (
-    <Card>
+    <Card className={cardClass}>
       <CardHeader className="flex-row items-center gap-4">
         {icon}
-        <p className={`${titleClass}`}>{title}</p>
+        <p className={titleClass}>{title}</p>
       </CardHeader>
       <CardContent className="flex justify-between">
         <p className={`font-bold ${contentClass}`}>{formattedAmount}</p>
