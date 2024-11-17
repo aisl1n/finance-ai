@@ -7,12 +7,14 @@ interface SummaryCardProps {
   title: string;
   amount: number;
   size?: "small" | "large";
+  userCanAddTransaction?: boolean;
 }
 const SummaryCard = ({
   icon,
   title,
   amount,
   size = "small",
+  userCanAddTransaction,
 }: SummaryCardProps) => {
   const isSmall = size === "small";
   const isLarge = size === "large";
@@ -35,7 +37,9 @@ const SummaryCard = ({
       </CardHeader>
       <CardContent className="flex justify-between">
         <p className={`font-bold ${contentClass}`}>{formattedAmount}</p>
-        {isLarge && <AddTransactionButton />}
+        {isLarge && (
+          <AddTransactionButton userCanAddTransaction={userCanAddTransaction} />
+        )}
       </CardContent>
     </Card>
   );
